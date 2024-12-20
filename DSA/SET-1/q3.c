@@ -41,15 +41,22 @@ void printPolynomial(Term poly[], int size) {
 }
 
 int main() {
-    Term poly1[] = {{3, 0}, {2, 1}, {4, 3}};
-    Term poly2[] = {{1, 0}, {1, 1}, {3, 2}};
-    Term result[10];
-    int sizeResult;
+    Term poly1[100], poly2[100], result[200];
+    int size1, size2, sizeResult;
 
-    addSparsePolynomials(poly1, 3, poly2, 3, result, &sizeResult);
+    // Input the first polynomial
+    printf("\nInput the first polynomial:\n");
+    inputPolynomial(poly1, &size1);
 
-    printf("Resultant polynomial: ");
+    // Input the second polynomial
+    printf("\nInput the second polynomial:\n");
+    inputPolynomial(poly2, &size2);
+
+    // Add the two polynomials
+    addSparsePolynomials(poly1, size1, poly2, size2, result, &sizeResult);
+
+    // Print the resultant polynomial
+    printf("\nResultant polynomial: ");
     printPolynomial(result, sizeResult);
-
     return 0;
 }
