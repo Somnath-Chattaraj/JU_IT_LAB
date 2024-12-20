@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 
+int i;
 typedef struct {
     int coefficient;
     int exponent;
@@ -8,7 +9,7 @@ typedef struct {
 
 int evaluateSparsePolynomial(Term poly[], int size, int x) {
     int result = 0;
-    for (int i = 0; i < size; i++) {
+    for (i = 0; i < size; i++) {
         result += poly[i].coefficient * pow(x, poly[i].exponent);
     }
     return result;
